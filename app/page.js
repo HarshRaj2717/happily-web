@@ -6,7 +6,5 @@ export default function Home() {
    <h1>Ashutosh</h1>
    <AcUnitIcon/>
    </>
-    
-
   )
 }
