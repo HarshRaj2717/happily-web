@@ -1,10 +1,11 @@
 "use client"
 import AcUnitIcon from '@mui/icons-material/AcUnit';
+import Login from './login/page';
+import Verification from './verification/page';
 export default function Home() {
   return (
    <>
-   <h1>Ashutosh</h1>
-   <AcUnitIcon/>
+    <Login/>
    </>
   )
 }
