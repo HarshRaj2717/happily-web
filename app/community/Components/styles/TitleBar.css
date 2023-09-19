@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap');
+
+.bb{
+    background: rgb(209,209,208);
+    background: linear-gradient(90deg, #ffe8ad 0%, rgba(255, 255, 255, 1) 100%);
+
+
+    font-family: 'Raleway', sans-serif;
+}
+.container{
+    
+    margin:0 auto;    
+}
+.topSearchBar {
+    
+    display: flex;
+    align-items: center;
+    width:100%;
+    border: 1px solid lightgray;
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 5px;
+  }
+  
+  .topSearchBar > input {
+    background-color: transparent;
+    outline: none;
+    width:100%;
+    border: none;
+    color: rgb(49, 49, 49);
+  }
+  
+  .topSearchBar > .MuiSvgIcon-root {
+    color: gray;
+  }
+
+.secondDivSearchBar{
+    margin-top:5px;
+    display: flex;
+    gap:30px;
+    justify-content: space-around;
+    align-items: center;
+}
+.iconn{
+    transform: translateY(7px);
+    padding-left: 10px;
+
+}
+.searchBarContents{
+    font-size: smaller;
+}
+.secDivSubDiv{
+    display:flex;
+    gap:5px;
+    align-items: baseline;
+}
