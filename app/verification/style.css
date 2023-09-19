@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    font-family:'Roboto';
+}
+.bb{
+    background: rgb(209,209,208);
+background: linear-gradient(90deg, rgba(209,209,208,1) 0%, rgba(255,255,255,1) 100%);
+}
+.cc{
+    background-Color:#ababab;
+    color: black;
+    margin:15px;
+    width:90%;
+}
+.gg{
+    background-Color:#F5C03D;
+    color: black;
+    margin:15px;
+    width:90%;
+}
+h2{
+    font-family: 300;
+}
