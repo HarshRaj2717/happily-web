@@ -1,16 +1,23 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import SinglePost from "./Components/single-post";
-import TitleBar from "./Components/TitleBar";
-import { getPosts } from "./js/apiCalls";
+import SinglePost from "../Components/single-post";
+import TitleBar from "../Components/TitleBar";
+import { getPosts } from "../js/apiCalls";
 
-export default function Community() {
+export default function Community({ params }) {
   const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {
     async function fetchPosts() {
       const posts = await getPosts();
-      setAllPosts(posts);
+      let postByID = [];
+      posts.forEach((post) => {
+        if (String(params.post_id) === String(post.id)) {
+          postByID.push(post);
+          return;
+        }
+      });
+      setAllPosts(postByID);
     }
     fetchPosts();
   }, []);

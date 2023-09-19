@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap");
+
+.bb {
+  /* background: rgb(209,209,208);
+    background: linear-gradient(90deg, #ffe8ad 0%, rgba(255, 255, 255, 1) 100%); */
+
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.titleBar {
+  align-items: center;
+}
+.topSearchBar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid lightgray;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.topSearchBar > input {
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+  border: none;
+  color: rgb(49, 49, 49);
+}
+
+.topSearchBar > .MuiSvgIcon-root {
+  color: gray;
+}
+
+.secondDivSearchBar {
+  margin-top: 5px;
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+.iconn {
+  transform: translateY(7px);
+  padding-left: 10px;
+}
+.searchBarContents {
+  font-size: smaller;
+}
+.secDivSubDiv {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+}
+
+.postUserName {
+  font-size: smaller;
+}
+.postUserNameFollow {
+  font-size: small;
+  color: blue;
+}
+.postUserNameCred {
+  margin-top: 4px;
+  font-size: small;
+}
+.nameFollow {
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+}
+.postHeader {
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.questions {
+  font-size: larger;
+  font-weight: 600;
+}
+.postFooterWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.postUserNameC {
+  font-size: x-small;
+}
+.postUserNameCc {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: xx-small;
+  color: gray;
+}
+.postUserNameCcc {
+  font-weight: 400;
+  font-size: small;
+}
