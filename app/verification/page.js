@@ -27,7 +27,7 @@ function Verification() {
        
         if(validate()) 
         {
-          fetch(`https://happily-backend.onrender.com/${process.env.frontend_secret_key}/auth/register/?email=${email}&format=json&code=${isCode}`)
+          fetch(`${process.env.origin_link}/${process.env.frontend_secret_key}/auth/register/?email=${email}&format=json&code=${isCode}`)
           .then((res)=>{
             return res.json();
           }).then((resp)=>{

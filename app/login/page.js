@@ -14,7 +14,7 @@ const Login = () => {
    
     if(validate())
     {
-      fetch(`https://happily-backend.onrender.com/${process.env.frontend_secret_key}/auth/login/?email=${isEmail}&format=json&password=${isPassword}`)
+      fetch(`${process.env.origin_link}/${process.env.frontend_secret_key}/auth/login/?email=${isEmail}&format=json&password=${isPassword}`)
       .then((res)=>{
         return res.json();
       }).then((resp)=>{

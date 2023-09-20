@@ -3,7 +3,7 @@
 export async function getPosts() {
   try {
     const api_res = await fetch(
-      `https://happily-backend.onrender.com/${process.env.frontend_secret_key}/community/get-posts`,
+      `${process.env.origin_link}/${process.env.frontend_secret_key}/community/get-posts`,
       { cache: "no-store" }
     );
     const api_data = await api_res.json();
@@ -22,7 +22,7 @@ export async function getPosts() {
 export async function getComments(post_id) {
   try {
     const api_res = await fetch(
-      `https://happily-backend.onrender.com/${process.env.frontend_secret_key}/community/get-comments/${post_id}`,
+      `${process.env.origin_link}/${process.env.frontend_secret_key}/community/get-comments/${post_id}`,
       { cache: "no-store" }
     );
     const api_data = await api_res.json();
@@ -45,7 +45,7 @@ export async function createPost(user_api_key, title, content) {
       content: content,
     };
     const api_res = await fetch(
-      `https://happily-backend.onrender.com/${process.env.frontend_secret_key}/community/${user_api_key}/create-post/`,
+      `${process.env.origin_link}/${process.env.frontend_secret_key}/community/${user_api_key}/create-post/`,
       {
         cache: "no-store",
         method: "POST",
@@ -71,7 +71,7 @@ export async function createPost(user_api_key, title, content) {
 export async function deletePost(user_api_key, post_id) {
   try {
     const api_res = await fetch(
-      `https://happily-backend.onrender.com/${process.env.frontend_secret_key}/community/${user_api_key}/delete-post/${post_id}`,
+      `${process.env.origin_link}/${process.env.frontend_secret_key}/community/${user_api_key}/delete-post/${post_id}`,
       {
         cache: "no-store",
         method: "DELETE",
@@ -99,7 +99,7 @@ export async function createComment(user_api_key, post_id, content) {
       content: content,
     };
     const api_res = await fetch(
-      `https://happily-backend.onrender.com/${process.env.frontend_secret_key}/community/${user_api_key}/create-comment/${post_id}`,
+      `${process.env.origin_link}/${process.env.frontend_secret_key}/community/${user_api_key}/create-comment/${post_id}`,
       {
         cache: "no-store",
         method: "POST",
@@ -125,7 +125,7 @@ export async function createComment(user_api_key, post_id, content) {
 export async function deleteComment(user_api_key, post_id, comment_id) {
   try {
     const api_res = await fetch(
-      `https://happily-backend.onrender.com/${process.env.frontend_secret_key}/community/${user_api_key}/delete-comment/${post_id}/${comment_id}`,
+      `${process.env.origin_link}/${process.env.frontend_secret_key}/community/${user_api_key}/delete-comment/${post_id}/${comment_id}`,
       {
         cache: "no-store",
         method: "DELETE",
@@ -150,7 +150,7 @@ export async function deleteComment(user_api_key, post_id, comment_id) {
 export async function upvotePost(user_api_key, post_id) {
   try {
     const api_res = await fetch(
-      `https://happily-backend.onrender.com/${process.env.frontend_secret_key}/community/${user_api_key}/upvote-post/${post_id}`,
+      `${process.env.origin_link}/${process.env.frontend_secret_key}/community/${user_api_key}/upvote-post/${post_id}`,
       { cache: "no-store" }
     );
     const api_data = await api_res.json();
@@ -169,7 +169,7 @@ export async function upvotePost(user_api_key, post_id) {
 export async function downvotePost(user_api_key, post_id) {
   try {
     const api_res = await fetch(
-      `https://happily-backend.onrender.com/${process.env.frontend_secret_key}/community/${user_api_key}/downvote-post/${post_id}`,
+      `${process.env.origin_link}/${process.env.frontend_secret_key}/community/${user_api_key}/downvote-post/${post_id}`,
       { cache: "no-store" }
     );
     const api_data = await api_res.json();
