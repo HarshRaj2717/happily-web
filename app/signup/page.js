@@ -72,7 +72,7 @@ const Login = () => {
   };
 
   return (
-    <Grid style={bgg} className="bb bg-black">
+    <Grid style={bgg} className="">
       <Paper style={paperStyle} variant="outlined">
         <Grid align="center">
           <Avatar style={avatarStyle}></Avatar>

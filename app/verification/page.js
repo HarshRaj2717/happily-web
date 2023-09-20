@@ -64,7 +64,7 @@ function Verification() {
       };
   return (
     <>
-    <Grid style={bgg} className='bb'>
+    <Grid style={bgg} className=''>
     <Paper style={paperStyle} variant="outlined">
     <TextField size='small' style={txtStyle} type='text' id="outlined-basic fullWidth" label="XXXXXX" onChange={(e)=>setCode(e.target.value)} variant="outlined" required />
     <Divider/>
