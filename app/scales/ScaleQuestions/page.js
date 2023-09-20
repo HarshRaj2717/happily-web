@@ -10,6 +10,8 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import './ScaleQuestions.css';
+import Card from '@mui/joy/Card';
+
 
 
 function ScaleQuestions() { 
@@ -17,7 +19,7 @@ function ScaleQuestions() {
     const [error, setError] = useState(false);
     const [isScale,setScale]=useState("");
     const [helperText, setHelperText] = useState('Choose wisely');
-    const [questions, setQuestions] = useState([]);
+    const [isData, setData] = useState([]);
     const [questionIndex, setQuestionIndex] = useState(0);
     const [loading, setLoading] = useState(true);
 
@@ -26,17 +28,26 @@ function ScaleQuestions() {
         if (typeof window !== 'undefined' && window.localStorage) {
             const storedScale = localStorage.getItem('scale');
             if (storedScale) {
-              setScale(storedScale); 
-            }
-        // Fetch questions from the API when the component mounts
-        fetch('https://your-api-url-here.com/questions')
+              setScale(storedScale);  
+            }}
+          },[]); 
+
+
+
+
+          
+        fetch(`https://happily-backend.onrender.com/39e75598ba38f98a1721a064222b79c388c308621a792f3cc7b71d93661a5e75/scales/${isScale}`)
           .then((response) => response.json())
           .then((data) => {
-            setQuestions(data.questions);
+            setData(data);
             setLoading(false);
           })
           .catch((error) => console.error('Error:', error));
-      }, []);
+        
+       
+
+        const scaleQuestions=isData["questions"]||[]  
+        const options=isData["choices"]||[]
 
     const buttonStyle = {
       backgroundColor:'#F5C03D',
@@ -44,61 +55,36 @@ function ScaleQuestions() {
       margin:'15px',
       width:'90%',
     };
-  
-    const handleRadioChange = (event) => {
-      setValue(event.target.value);
-      setHelperText(' ');
-      setError(false);
-    };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-  
-      if (value === 'best') {
-        setHelperText('You got it!');
-        setError(false);
-      } else if (value === 'worst') {
-        setHelperText('Sorry, wrong answer!');
-        setError(true);
-      } else {
-        setHelperText('Please select an option.');
-        setError(true);
-      }
-    };
-  
   const pageDim = { width: '100%', height: '100vh' };
   const heading = { padding: '20px', fontWeight: 700 };
   const headingScales = { padding: '15px', fontWeight: 300 };
-  const heading2={padding:''}
+  const heading2={padding:'', fontWeight:400}
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <Grid className='bb' style={pageDim}>
         <div className='container'>
-        <Typography style={heading} variant='h4' gutterBottom>
-          <span>lorem</span>
-        </Typography>
-        <form onSubmit={handleSubmit}>
-      <FormControl sx={{ m: 3 }} error={error} variant="standard">
-        <FormLabel id="demo-error-radios" style={{ color: 'grey' }}>Your Answer</FormLabel>
-        <RadioGroup
-          aria-labelledby="demo-error-radios"
-          name="quiz"
-          value={value}
-          onChange={handleRadioChange}
-        >
-          <FormControlLabel value="1" control={<Radio />} label="always" />
-          <FormControlLabel value="2" control={<Radio />} label="often" />
-          <FormControlLabel value="3" control={<Radio />} label="sometimes" />
-          <FormControlLabel value="4" control={<Radio />} label="rarely" />
-          <FormControlLabel value="5" control={<Radio />} label="never" />
 
-        </RadioGroup>
-        <FormHelperText>{helperText}</FormHelperText>
-        <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="contained" style={buttonStyle}>
-          Submit
-        </Button>
-      </FormControl>
-    </form>
+
+        {scaleQuestions.map((question, index) => (
+        <Typography style={heading} variant='h4' gutterBottom key={index}>
+        {question}
+        </Typography>
+        ))}
+
+        {options.map((option,index)=>(
+        <Card className="cursor-pointer m-2 bg-yellow-200" key={index} ><Typography style={heading2} variant='h6' gutterBottom>{option}</Typography></Card>))}
     </div>
     </Grid>
   )

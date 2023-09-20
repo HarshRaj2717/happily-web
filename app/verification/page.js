@@ -18,7 +18,7 @@ function Verification() {
         if (storedEmail) {
           setEmail(storedEmail); 
         }
-      }
+      } 
     }, []);
  
  
@@ -32,7 +32,7 @@ function Verification() {
             return res.json();
           }).then((resp)=>{
             console.log(resp)
-            if(resp.success===1)
+            if(resp.success===1) 
             {
               console.log("Sign in success")
               router.push('/login')
