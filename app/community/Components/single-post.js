@@ -126,7 +126,7 @@ function SinglePost({
 
   const shareHandler = () => {
     navigator.clipboard.writeText(shareable_link);
-    window.alert("Link to post copied: " + shareable_link)
+    window.alert("Link to post copied: " + shareable_link);
   };
 
   const upvoteHandler = async () => {
@@ -174,7 +174,9 @@ function SinglePost({
         <div className="container rounded-full">
           {/* Api Integration */}
 
-          <Paper style={{ padding: "15px", marginTop: "0px" }} className="rounded-full">
+          <Paper
+            style={{ padding: "15px", marginTop: "0px", borderRadius: "15px" }}
+          >
             <div style={{ display: "flex", gap: "10px" }}>
               <Avatar sx={{ width: 24, height: 24 }}>{sender[0]}</Avatar>
 
