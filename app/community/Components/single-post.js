@@ -61,7 +61,7 @@ function CommentInput({
 }) {
   const submitHandler = async () => {
     const api_data = await createComment(
-      localStorage.getItem("user_api_key"),
+      localStorageStorage.getItem("user_api_key"),
       post_id,
       document.getElementById(post_id + "_comment_text").value
     );
@@ -126,12 +126,12 @@ function SinglePost({
 
   const shareHandler = () => {
     navigator.clipboard.writeText(shareable_link);
-    window.alert("Link to post copied: " + shareable_link)
+    window.alert("Link to post copied: " + shareable_link);
   };
 
   const upvoteHandler = async () => {
     const api_data = await upvotePost(
-      localStorage.getItem("user_api_key"),
+      localStorageStorage.getItem("user_api_key"),
       post_id
     );
     if (api_data.success !== 1) return;
@@ -146,7 +146,7 @@ function SinglePost({
 
   const downvoteHandler = async () => {
     const api_data = await downvotePost(
-      localStorage.getItem("user_api_key"),
+      localStorageStorage.getItem("user_api_key"),
       post_id
     );
     if (api_data.success !== 1) return;
@@ -161,7 +161,7 @@ function SinglePost({
 
   const deleteHandler = async () => {
     const api_data = await deletePost(
-      localStorage.getItem("user_api_key"),
+      localStorageStorage.getItem("user_api_key"),
       post_id
     );
     if (api_data.success !== 1) return;
@@ -171,10 +171,12 @@ function SinglePost({
   return deleted ? null : (
     <div className="bb">
       <Grid className="bb">
-        <div className="container">
+        <div className="container rounded-full">
           {/* Api Integration */}
 
-          <Paper style={{ padding: "15px", marginTop: "0px" }}>
+          <Paper
+            style={{ padding: "15px", marginTop: "0px", borderRadius: "15px" }}
+          >
             <div style={{ display: "flex", gap: "10px" }}>
               <Avatar sx={{ width: 24, height: 24 }}>{sender[0]}</Avatar>
 
