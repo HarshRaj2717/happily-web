@@ -8,7 +8,7 @@ function Questionnaire() {
   const [scaleData, setScaleData] = useState([]);
   const [isClicked, setClicked] = useState("");
   const pageDim = { width: "100%", height: "100vh" };
-  const heading = { padding: "20px", fontWeight: 700 };
+  const heading = { padding: "20px", fontWeight: 700,color:"black" };
   const headingScales = { padding: "15px", fontWeight: 300 };
   const router = useRouter();
 
@@ -34,7 +34,7 @@ function Questionnaire() {
   return (
     <Grid className="bb" style={pageDim}>
       <div className="container">
-        <Typography style={heading} variant="h2" gutterBottom>
+        <Typography style={heading} variant="h2" gutterBottom >
           Scales
         </Typography>
 

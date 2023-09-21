@@ -27,24 +27,63 @@ export default function SearchBar() {
   }
 
   if (scale_link == "gidyq-aa-male" || scale_link == "gidyq-aa-female") {
-    return <></>;
+    return (
+    <>
+      <div className="bb">
+          <div className="container text-center p-3">
+            <Typography className="m-auto mt-[30px]" level="h2" color="primary">
+              Your Results
+            </Typography>
+            <div className="m-auto text-gray-600 text-sm">{scale_link}</div>
+            <div className="m-5">
+            <div className="m-auto text-black text-lg font">
+            <span className="font-bold">Result : </span>{result.result} 
+            </div>
+            
+            </div>
+            <div className="my-[50px] text-sm">{result.refrences}</div>
+            </div>
+            </div>
+    </>
+        );
   } else if (scale_link == "dass-y") {
     return (
       <>
         <div className="bb">
           <div className="container text-center p-3">
-            <Typography className="m-auto" level="h2" color="primary">
+            <Typography className="m-auto mt-[30px]" level="h2" color="primary">
               Your Results
             </Typography>
             <div className="m-auto text-gray-600 text-sm">{scale_link}</div>
+
+            <div className="m-5">
             <div className="m-auto text-black text-lg font">
-              {result.result.total}
+            <span className="font-bold">Total : </span>{result.result.total[0]}
             </div>
+            <div>score : {result.result.total[1]} %</div>
+            <div className="m-auto text-black text-lg font">
+            <span className="font-bold">Depression : </span>{result.result.depression[0]}
+            </div>
+            <div>score : {result.result.depression[1]} %</div>
+            <div className="m-auto text-black text-lg font">
+            <span className="font-bold">Anxiety : </span>{result.result.anxiety[0]}
+            </div>
+            <div>score : {result.result.anxiety[1]} %</div> 
+            <div className="m-auto text-black text-lg font">
+            <span className="font-bold">Stress : </span>{result.result.stress[0]}
+            </div>
+            <div>score : {result.result.stress[1]} %</div>
+            </div>
+
+            <div className="my-[50px] text-sm">{result.refrences}</div>
+            
+          
+
           </div>
         </div>
       </>
     );
   } else {
-    return <></>;
+    return( <><h1>ashutsoh</h1></>);
   }
 }
