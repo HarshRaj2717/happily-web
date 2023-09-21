@@ -14,7 +14,7 @@ function Verification() {
 
     useEffect(() => {
       if (typeof window !== 'undefined' && window.localStorage) {
-        const storedEmail = localStorage.getItem('email');
+        const storedEmail = localStorage.getItem('user_email');
         if (storedEmail) {
           setEmail(storedEmail); 
         }
