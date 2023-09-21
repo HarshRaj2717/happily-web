@@ -21,9 +21,8 @@ function ScaleQuestions() {
     const [isAnswer,setAnswer]=useState(0);
     const [isClicked,setClicked]=useState(false)
     const [displayResult,setDisplayresult]=useState(false);
-    const [selectedAnswers, setSelectedAnswers] = useState([]);
   
-
+ 
     useEffect(() => {
 
         if (typeof window !== 'undefined' && window.localStorage) {
@@ -32,10 +31,6 @@ function ScaleQuestions() {
               setScale(storedScale);  
             }}
           },[]); 
-
-    
-
-
 
  
 
@@ -48,17 +43,10 @@ function ScaleQuestions() {
 
 
           
-        
-       
-
         const scaleQuestions=isData["questions"]||[]  
         const options=isData["choices"]||[]
 
 
-        useEffect(() => {
-          // Initialize selectedAnswers array with the same length as scaleQuestions
-      setSelectedAnswers(new Array(scaleQuestions.length).fill(-1));
-      }, [scaleQuestions]);
 
         
 
@@ -70,8 +58,6 @@ function ScaleQuestions() {
         else{
           setCurrentQuestion(0);
           setDisplayresult(true);
-          const answersString = selectedAnswers.join(',');
-          console.log(answersString);
         }
         setClicked(false)
 
@@ -85,7 +71,7 @@ function ScaleQuestions() {
       width:'20%',
     };
   const pageDim = { width: '100%', height: '100vh' };
-  const heading = { padding: '20px', fontWeight: 700 };
+  const heading = { padding: '20px', fontWeight: 700, color:"black" };
   const headingScales = { padding: '15px', fontWeight: 300 };
   const heading2={padding:'', fontWeight:400}
 
@@ -96,7 +82,7 @@ function ScaleQuestions() {
 
         
         <Typography style={heading} variant='h4' gutterBottom >
-        {scaleQuestions[currentQuestion]}
+        {scaleQuestions[currentQuestion]} 
         </Typography>
 
         {options.map((option,index)=>(
@@ -104,11 +90,6 @@ function ScaleQuestions() {
           isClicked && isAnswer === index ? 'bg-yellow-200' : ''  }`} 
           onClick={()=>{ setAnswer(index);
           setClicked(true);
-          setSelectedAnswers((prevAnswers) => {
-          const updatedAnswers = [...prevAnswers];
-          updatedAnswers[currentQuestion] = index;
-          return updatedAnswers;
-          });
           }}  key={index} ><Typography style={heading2} variant='h6' gutterBottom>{option}</Typography></Card>))}
 
 
