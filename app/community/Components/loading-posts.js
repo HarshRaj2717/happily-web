@@ -17,7 +17,7 @@ function SingleLoadingPost() {
       <Grid className="bb">
         <div className="container rounded-full">
           <Paper
-            style={{ padding: "15px", marginTop: "0px", borderRadius: "15px" }}
+            style={{ padding: "15px", marginTop: "0px", borderRadius: "10px" }}
             className="rounded-full"
           >
             <div style={{ display: "flex", gap: "10px" }}>

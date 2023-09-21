@@ -2,6 +2,7 @@
 import React from "react";
 import { Grid, Paper, Button, Divider, TextareaAutosize } from "@mui/material";
 import Input from "@mui/joy/Input";
+import Textarea from '@mui/joy/Textarea';
 import { createPost } from "../js/apiCalls";
 import "./styles/posts.css";
 
@@ -29,7 +30,7 @@ function CreatePost() {
         <Grid className="bb">
           <div className="container">
             <Paper>
-              <h3 className="pad">Create a Post</h3>
+              <h3 className="pad m-2">Create a Post</h3>
               <Divider />
               <div className="pad">
                 <Input
@@ -39,22 +40,34 @@ function CreatePost() {
                   className="text-2xl p-2 mx-2"
                 />
               </div>
-              <div className="pad flex justify-center items-center">
-                <TextareaAutosize
+              <div className="pad flex justify-center items-center pad">
+
+              <Textarea
+                   color="primary"
+                     minRows={15}
+                     style={{width:"100%"}}
+                  variant="outlined"
+                  id="content_textarea"
+                  placeholder="Write Your Answer Here...."
+                  className="mx-2"
+                    />
+                {/* <TextareaAutosize
                   id="content_textarea"
                   minRows={15}
                   maxRows={15}
                   className="w-11/12 bg-transparent p-5 font-sans"
                   placeholder="Write your answer here"
-                />
+                /> */}
               </div>
-              <Button
+              <div className="pad"><Button
+                className="mx-2"
                 variant="contained"
                 style={buttonStyle}
                 onClick={clickHandler}
               >
                 Submit
-              </Button>
+              </Button></div>
+              
             </Paper>
           </div>
         </Grid>

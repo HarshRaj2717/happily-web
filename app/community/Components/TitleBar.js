@@ -7,14 +7,14 @@ function TitleBar() {
   return (
     <div className="bb">
       <div className="container">
-        <Paper style={{ padding: "15px" }}>
+        <Paper  style={{ padding: "15px",borderRadius:"10px" }}>
           <div style={{ display: "flex", gap: "10px" }}>
             <Avatar>
-              {localStorage.getItem("user_email")
+              { localStorage.getItem("user_email")
                 ? localStorage.getItem("user_email")[0]
                 : null}
-            </Avatar>
-            <a className="secDivSubDiv" href="community/create-post">
+            </Avatar> 
+            <a className="secDivSubDiv no-underline text-xl" href="community/create-post">
               <PostAddIcon className="iconn" />
               <span className="searchBarContents">Create a Post</span>
             </a>
