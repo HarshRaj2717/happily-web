@@ -23,7 +23,7 @@ const Login = () => {
         if(resp.success===1)
         {
           let email;
-          localStorage.setItem('email',isEmail)
+          localStorage.setItem('user_email',isEmail)
           console.log("Verfication code sent")
           router.push('/verification')
          

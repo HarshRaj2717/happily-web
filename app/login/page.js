@@ -23,7 +23,9 @@ const Login = () => {
         if(resp.success===1)
         {
           console.log("login success")
-          // router.push('') needs to be linked
+          router.push('/')
+          localStorage.setItem("user_email", isEmail)
+          localStorage.setItem("user_api_key", resp.api_token)
          
         }
         else{

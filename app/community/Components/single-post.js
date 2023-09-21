@@ -61,7 +61,7 @@ function CommentInput({
 }) {
   const submitHandler = async () => {
     const api_data = await createComment(
-      localStorageStorage.getItem("user_api_key"),
+      localStorage.getItem("user_api_key"),
       post_id,
       document.getElementById(post_id + "_comment_text").value
     );
@@ -131,7 +131,7 @@ function SinglePost({
 
   const upvoteHandler = async () => {
     const api_data = await upvotePost(
-      localStorageStorage.getItem("user_api_key"),
+      localStorage.getItem("user_api_key"),
       post_id
     );
     if (api_data.success !== 1) return;
@@ -146,7 +146,7 @@ function SinglePost({
 
   const downvoteHandler = async () => {
     const api_data = await downvotePost(
-      localStorageStorage.getItem("user_api_key"),
+      localStorage.getItem("user_api_key"),
       post_id
     );
     if (api_data.success !== 1) return;
@@ -161,7 +161,7 @@ function SinglePost({
 
   const deleteHandler = async () => {
     const api_data = await deletePost(
-      localStorageStorage.getItem("user_api_key"),
+      localStorage.getItem("user_api_key"),
       post_id
     );
     if (api_data.success !== 1) return;
