@@ -14,7 +14,7 @@ function Verification() {
 
     useEffect(() => {
       if (typeof window !== 'undefined' && window.localStorage) {
-        const storedEmail = localStorage.getItem('email');
+        const storedEmail = localStorage.getItem('user_email');
         if (storedEmail) {
           setEmail(storedEmail); 
         }
@@ -34,8 +34,9 @@ function Verification() {
             console.log(resp)
             if(resp.success===1) 
             {
+              localStorage.setItem("user_api_key", resp.api_token)
               console.log("Sign in success")
-              router.push('/login')
+              router.push('/')
             }
             else{
               console.log("Sign up failed")
