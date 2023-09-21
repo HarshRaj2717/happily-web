@@ -70,7 +70,7 @@ function ScaleQuestions({ params }) {
         {options.map((option, index) => (
           <Card
             className={`cursor-pointer m-2 ${
-              isClicked && isAnswer === index + 1 ? "bg-yellow-200 !bg-yellow-200" : ""
+              isClicked && isAnswer === index + 1 ? "!bg-yellow-200" : ""
             }`}
             onClick={() => {
               setAnswer(index + 1);
