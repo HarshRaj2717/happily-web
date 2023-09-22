@@ -41,23 +41,13 @@ function CreatePost() {
                 />
               </div>
               <div className="pad flex justify-center items-center pad">
-
-              <Textarea
-                   color="primary"
-                     minRows={15}
-                     style={{width:"100%"}}
-                  variant="outlined"
-                  id="content_textarea"
-                  placeholder="Write Your Answer Here...."
-                  className="mx-2"
-                    />
-                {/* <TextareaAutosize
+                <TextareaAutosize
                   id="content_textarea"
                   minRows={15}
                   maxRows={15}
                   className="w-11/12 bg-transparent p-5 font-sans"
                   placeholder="Write your answer here"
-                /> */}
+                />
               </div>
               <div className="pad"><Button
                 className="mx-2"
